@@ -15,7 +15,6 @@ except ImportError:
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-portfolioai-dev-2025-change-in-prod')
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1,0.0.0.0').split(',')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -111,7 +110,6 @@ REST_FRAMEWORK = {
     'DEFAULT_PARSER_CLASSES':    ['rest_framework.parsers.JSONParser','rest_framework.parsers.MultiPartParser','rest_framework.parsers.FormParser'],
 }
 
-CORS_ALLOWED_ORIGINS = os.environ.get('CORS_ALLOWED_ORIGINS','http://localhost:3000,http://127.0.0.1:3000').split(',')
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_ALL_ORIGINS = DEBUG
 
