@@ -11,11 +11,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-# 🔥 ADD THIS LINE (IMPORTANT)
-RUN python manage.py migrate
-
 RUN python manage.py collectstatic --noinput
 
 EXPOSE 8000
 
-CMD ["gunicorn", "portfolio_builder.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["sh", "-c", "python manage.py migrate && gunicorn portfolio_builder.wsgi:application --bind 0.0.0.0:8000"]
