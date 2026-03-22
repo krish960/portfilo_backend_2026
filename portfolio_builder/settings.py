@@ -74,10 +74,9 @@ if DATABASE_URL:
     }
 
 # Allowed hosts
-ALLOWED_HOSTS = os.environ.get(
-    'ALLOWED_HOSTS', 'localhost,127.0.0.1'
-).split(',')
-
+ALLOWED_HOSTS = [
+    'portfilo-backend-2026.onrender.com'
+]
 # Static files for production
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 AUTH_USER_MODEL = 'accounts.User'
