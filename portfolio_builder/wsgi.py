@@ -1,14 +1,8 @@
-from django.core.wsgi import get_wsgi_application
-
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'portfolio_builder.settings')
-application = get_wsgi_application()
-
-
 import os
 import django
 
-# os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'portfolio_builder.settings')
-# django.setup()
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'portfolio_builder.settings')
+django.setup()
 
 from django.contrib.auth import get_user_model
 
